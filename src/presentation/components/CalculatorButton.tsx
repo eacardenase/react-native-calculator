@@ -18,11 +18,11 @@ export const CalculatorButton = ({
 }: Props) => {
   return (
     <Pressable
-      style={pressed => ({
+      style={({ pressed }) => ({
         ...styles.button,
         width: doubleSize ? 180 : 80,
         backgroundColor: color,
-        opacity: pressed ? 0.8 : 0,
+        opacity: pressed ? 0.8 : 1,
       })}
       onPress={() => onPress()}
     >
