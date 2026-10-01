@@ -11,17 +11,17 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="C" color={colors.lightGray} />
-        <CalculatorButton label="+/-" color={colors.lightGray} />
-        <CalculatorButton label="del" color={colors.lightGray} />
-        <CalculatorButton label="/" color={colors.orange} />
+        <CalculatorButton label="C" color={colors.lightGray} blackText />
+        <CalculatorButton label="+/-" color={colors.lightGray} blackText />
+        <CalculatorButton label="del" color={colors.lightGray} blackText />
+        <CalculatorButton label="÷" color={colors.orange} />
       </View>
 
       <View style={styles.row}>
         <CalculatorButton label="7" />
         <CalculatorButton label="8" />
         <CalculatorButton label="9" />
-        <CalculatorButton label="X" color={colors.orange} />
+        <CalculatorButton label="x" color={colors.orange} />
       </View>
 
       <View style={styles.row}>
@@ -39,7 +39,7 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="0" />
+        <CalculatorButton label="0" doubleSize={true} />
         <CalculatorButton label="." />
         <CalculatorButton label="=" color={colors.orange} />
       </View>
