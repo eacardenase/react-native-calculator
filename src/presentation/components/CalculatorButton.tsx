@@ -24,7 +24,7 @@ export const CalculatorButton = ({
         backgroundColor: color,
         opacity: pressed ? 0.8 : 1,
       })}
-      onPress={() => onPress()}
+      onPress={onPress}
     >
       <Text
         style={{
