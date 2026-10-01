@@ -11,37 +11,76 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="C" color={colors.lightGray} blackText />
-        <CalculatorButton label="+/-" color={colors.lightGray} blackText />
-        <CalculatorButton label="del" color={colors.lightGray} blackText />
-        <CalculatorButton label="÷" color={colors.orange} />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="C"
+          color={colors.lightGray}
+          blackText
+        />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="+/-"
+          color={colors.lightGray}
+          blackText
+        />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="del"
+          color={colors.lightGray}
+          blackText
+        />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="÷"
+          color={colors.orange}
+        />
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="7" />
-        <CalculatorButton label="8" />
-        <CalculatorButton label="9" />
-        <CalculatorButton label="x" color={colors.orange} />
+        <CalculatorButton onPress={() => console.log('Hello')} label="7" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="8" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="9" />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="x"
+          color={colors.orange}
+        />
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="4" />
-        <CalculatorButton label="5" />
-        <CalculatorButton label="6" />
-        <CalculatorButton label="-" color={colors.orange} />
+        <CalculatorButton onPress={() => console.log('Hello')} label="4" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="5" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="6" />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="-"
+          color={colors.orange}
+        />
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="1" />
-        <CalculatorButton label="2" />
-        <CalculatorButton label="3" />
-        <CalculatorButton label="+" color={colors.orange} />
+        <CalculatorButton onPress={() => console.log('Hello')} label="1" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="2" />
+        <CalculatorButton onPress={() => console.log('Hello')} label="3" />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="+"
+          color={colors.orange}
+        />
       </View>
 
       <View style={styles.row}>
-        <CalculatorButton label="0" doubleSize={true} />
-        <CalculatorButton label="." />
-        <CalculatorButton label="=" color={colors.orange} />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="0"
+          doubleSize={true}
+        />
+        <CalculatorButton onPress={() => console.log('Hello')} label="." />
+        <CalculatorButton
+          onPress={() => console.log('Hello')}
+          label="="
+          color={colors.orange}
+        />
       </View>
     </View>
   );
