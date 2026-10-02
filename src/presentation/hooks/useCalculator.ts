@@ -102,6 +102,34 @@ export const useCalculator = () => {
     lastOperation.current = Operator.divide;
   };
 
+  const calculateResult = () => {
+    const value1 = Number(number);
+    const value2 = Number(previousNumber);
+
+    setPreviousNumber('0');
+
+    switch (lastOperation.current) {
+      case Operator.add:
+        setNumber(`${value1 + value2}`);
+
+        break;
+      case Operator.subtract:
+        setNumber(`${value2 - value1}`);
+
+        break;
+      case Operator.multiply:
+        setNumber(`${value1 * value2}`);
+
+        break;
+      case Operator.divide:
+        setNumber(`${value2 / value1}`);
+
+        break;
+      default:
+        throw new Error('Operation not supported.');
+    }
+  };
+
   return {
     number,
     previousNumber,
@@ -113,5 +141,6 @@ export const useCalculator = () => {
     subtractOperation,
     multiplyOperation,
     divideOperation,
+    calculateResult,
   };
 };
