@@ -27,6 +27,12 @@ export const useCalculator = () => {
     }
   }, [number]);
 
+  useEffect(() => {
+    const subResult = calculateSubResult();
+
+    setPreviousNumber(`${subResult}`);
+  }, [formula]);
+
   const clean = () => {
     setNumber('0');
     setPreviousNumber('0');
