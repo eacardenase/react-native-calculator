@@ -42,6 +42,10 @@ export const useCalculator = () => {
 
       // Evaluar si es diferente de cero, no hay punto y es el primer numero
       if (numberString !== '0' && !number.includes('.')) {
+        if (number.startsWith('-')) {
+          return setNumber('-' + numberString);
+        }
+
         return setNumber(numberString);
       }
 
