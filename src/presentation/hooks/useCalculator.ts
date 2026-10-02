@@ -92,6 +92,8 @@ export const useCalculator = () => {
   };
 
   const setLastNumber = () => {
+    calculateResult();
+
     if (number.endsWith('.')) {
       setPreviousNumber(number.slice(0, -1));
     } else {

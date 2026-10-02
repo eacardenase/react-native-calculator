@@ -26,7 +26,7 @@ export const CalculatorScreen = () => {
         </Text>
 
         <Text adjustsFontSizeToFit numberOfLines={1} style={styles.subResult}>
-          {previousNumber === '0' ? '' : previousNumber}
+          {previousNumber}
         </Text>
       </View>
 
