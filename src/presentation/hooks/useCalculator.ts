@@ -1,20 +1,37 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-enum Operator {
-  add,
-  subtract,
-  multiply,
-  divide,
+export enum Operator {
+  add = '+',
+  subtract = '-',
+  multiply = 'x',
+  divide = '÷',
 }
 
 export const useCalculator = () => {
+  const [formula, setFormula] = useState('');
   const [number, setNumber] = useState('0');
   const [previousNumber, setPreviousNumber] = useState('0');
   const lastOperation = useRef<Operator>(null);
 
+  useEffect(() => {
+    if (lastOperation.current) {
+      const firstFormulaPart = formula.split(' ').at(0);
+
+      setFormula(
+        `${firstFormulaPart} ${lastOperation.current} ${
+          number === '0' ? '' : number
+        }`,
+      );
+    } else {
+      setFormula(number);
+    }
+  }, [number]);
+
   const clean = () => {
     setNumber('0');
     setPreviousNumber('0');
+    setFormula('0');
+    lastOperation.current = null;
   };
 
   const deleteOperation = () => {
@@ -103,28 +120,36 @@ export const useCalculator = () => {
   };
 
   const calculateResult = () => {
-    const value1 = Number(number);
-    const value2 = Number(previousNumber);
+    let result = calculateSubResult();
 
+    setFormula(`${result}`);
     setPreviousNumber('0');
+
+    lastOperation.current = null;
+  };
+
+  const calculateSubResult = (): number => {
+    const [firstValue, secondValue] = formula.split(
+      ` ${lastOperation.current} `,
+    );
+    const num1 = Number(firstValue);
+    const num2 = Number(secondValue);
+
+    if (isNaN(num2)) return num1;
 
     switch (lastOperation.current) {
       case Operator.add:
-        setNumber(`${value1 + value2}`);
+        return num1 + num2;
 
-        break;
       case Operator.subtract:
-        setNumber(`${value2 - value1}`);
+        return num1 - num2;
 
-        break;
       case Operator.multiply:
-        setNumber(`${value1 * value2}`);
+        return num1 * num2;
 
-        break;
       case Operator.divide:
-        setNumber(`${value2 / value1}`);
+        return num1 / num2;
 
-        break;
       default:
         throw new Error('Operation not supported.');
     }
@@ -133,6 +158,7 @@ export const useCalculator = () => {
   return {
     number,
     previousNumber,
+    formula,
     buildNumber,
     clean,
     deleteOperation,

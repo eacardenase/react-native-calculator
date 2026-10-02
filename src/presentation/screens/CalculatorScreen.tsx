@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native';
 import { colors, styles } from '../../config/theme/app-theme';
 import { CalculatorButton } from '../components/CalculatorButton';
-import { useCalculator } from '../hooks/useCalculator';
+import { useCalculator, Operator } from '../hooks/useCalculator';
 
 export const CalculatorScreen = () => {
   const {
-    number,
+    formula,
     previousNumber,
     buildNumber,
     clean,
@@ -22,7 +22,7 @@ export const CalculatorScreen = () => {
     <View style={styles.calculatorContainer}>
       <View style={styles.resultContainer}>
         <Text adjustsFontSizeToFit numberOfLines={1} style={styles.mainResult}>
-          {number}
+          {formula}
         </Text>
 
         <Text adjustsFontSizeToFit numberOfLines={1} style={styles.subResult}>
@@ -51,7 +51,7 @@ export const CalculatorScreen = () => {
         />
         <CalculatorButton
           onPress={divideOperation}
-          label="÷"
+          label={Operator.divide}
           color={colors.orange}
         />
       </View>
@@ -62,7 +62,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => buildNumber('9')} label="9" />
         <CalculatorButton
           onPress={multiplyOperation}
-          label="x"
+          label={Operator.multiply}
           color={colors.orange}
         />
       </View>
@@ -73,7 +73,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => buildNumber('6')} label="6" />
         <CalculatorButton
           onPress={subtractOperation}
-          label="-"
+          label={Operator.subtract}
           color={colors.orange}
         />
       </View>
@@ -84,7 +84,7 @@ export const CalculatorScreen = () => {
         <CalculatorButton onPress={() => buildNumber('3')} label="3" />
         <CalculatorButton
           onPress={addOperation}
-          label="+"
+          label={Operator.add}
           color={colors.orange}
         />
       </View>
