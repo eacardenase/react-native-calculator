@@ -1,13 +1,16 @@
-import { StatusBar, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { CalculatorScreen } from './presentation/screens';
 import { styles } from './config/theme/app-theme';
 
 function App() {
   return (
-    <View style={styles.background}>
-      <StatusBar barStyle="light-content" />
-      <CalculatorScreen />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.background}>
+        <StatusBar barStyle="light-content" />
+        <CalculatorScreen />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

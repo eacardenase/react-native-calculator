@@ -16,12 +16,13 @@ export const styles = StyleSheet.create({
   },
   calculatorContainer: {
     flex: 1,
-    padding: 20,
-    justifyContent: 'flex-end',
+    alignItems: 'stretch',
   },
   resultContainer: {
+    flex: 3,
     paddingHorizontal: 30,
     paddingBottom: 20,
+    justifyContent: 'flex-end',
   },
   mainResult: {
     color: colors.textPrimary,
@@ -36,13 +37,23 @@ export const styles = StyleSheet.create({
     textAlign: 'right',
     fontWeight: '300',
   },
+  rowContainer: {
+    flex: 6,
+    justifyContent: 'flex-end',
+    gap: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+    gap: 10,
+  },
   button: {
-    height: 80,
-    width: 80,
+    flex: 1,
+    aspectRatio: 1,
     backgroundColor: colors.darkGray,
-    borderRadius: 40,
+    borderRadius: 999,
     justifyContent: 'center',
-    marginHorizontal: 10,
+    alignItems: 'center',
   },
   buttonText: {
     color: colors.textPrimary,
@@ -50,12 +61,5 @@ export const styles = StyleSheet.create({
     padding: 10,
     fontSize: 30,
     fontWeight: '300',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 18,
-    paddingHorizontal: 10,
   },
 });

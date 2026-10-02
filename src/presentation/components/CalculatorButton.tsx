@@ -20,9 +20,10 @@ export const CalculatorButton = ({
     <Pressable
       style={({ pressed }) => ({
         ...styles.button,
-        width: doubleSize ? 180 : 80,
         backgroundColor: color,
         opacity: pressed ? 0.8 : 1,
+        flex: doubleSize ? 2 : 1,
+        aspectRatio: doubleSize ? 0 : 1,
       })}
       onPress={onPress}
     >
